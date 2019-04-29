@@ -1,0 +1,30 @@
+//color palette
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-dark-3: #6D5D4B;
+$color-grey-dark-4: #54483A;
+
+$color-light: #fff;
+$color-dark: #000;
+
+//font
+$default-font-size: 1.6rem;
+$font-primary: 'Nunito', Arial, Helvetica, sans-serif;
+$font-display: 'Josefin Sans', Arial, Helvetica, sans-serif;
+
+/* 
+   media breakpoints
+   phone:                        37.5em  / 600px;
+   tablet-portrait (tab-port):   62.5em / 1000px;
+   tablet-landscape (tab-land):  75em    / 1200px;
+   big-desktop (big-desk):       112.5em / 1800px;
+*/
+
+$phone:     37.5em; 
+$tab-port:  62.5em;
+$tab-land:  75em;
+$big-desk:  112.5em;

@@ -1,0 +1,38 @@
+.text-center { text-align: center !important}
+.mb-sm { margin-bottom: 1.5rem !important}
+.mb-md { 
+   margin-bottom: 4rem !important;
+   
+   @include respond(tab-port, true) {
+      margin-bottom:  3rem !important;
+   }
+}
+.mb-lg { 
+   margin-bottom: 8rem !important;
+
+   @include respond(tab-port, true) {
+      margin-bottom:  4rem !important;
+   }
+}
+
+.mt-lg { 
+   margin-top: 8rem !important;
+
+   @include respond(tab-port, true) {
+      margin-top:  5rem !important;
+   }
+}
+.mt-xl { 
+   margin-top: 10rem !important;
+   
+   @include respond(tab-port, true) {
+      margin-top:  8rem !important;
+   }
+}
+
+.mr-sm {
+   margin-right: 0.5rem;
+}
+.ml-sm {
+   margin-left: 0.5rem;
+}

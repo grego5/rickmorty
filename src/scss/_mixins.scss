@@ -1,0 +1,36 @@
+/* 
+   responsive breakpoints manager
+   phone:                        37.5em  / 600px;
+   tablet-portrait (tab-port):   56.25em / 900px;
+   tablet-landscape (tab-land):  75em    / 1200px;
+   big-desktop (big-desk):       112.5em / 1800px;
+*/
+@mixin respond($bp, $touch: false) {
+   @if $bp == phone {
+      @media only screen and (max-width: $phone) { @content };
+   }
+   @else if $bp == tab-port {
+      @media only screen and (max-width: $tab-port) { @content };
+   }
+   @else if $bp == tab-land {
+      @media only screen and (max-width: $tab-land) { @content };
+   }
+   @else if $bp == big-desk {
+      @media only screen and (min-width: $big-desk) { @content };
+   }
+   @if $touch {
+      @media only screen and (hover: none) { @content };
+   }
+}
+
+@mixin retina-img($min, $max: big-desk) {
+   @media
+      only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (       -moz-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: $min),
+      only screen and (        min-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (                min-resolution: 192dpi) and (min-width: $min),
+      only screen and (                min-resolution: 2dppx)  and (min-width: $min),
+      only screen and (min-width: $max)
+   { @content }
+}
