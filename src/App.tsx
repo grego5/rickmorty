@@ -33,13 +33,23 @@ function App() {
     })
   }
   
-  console.log(state);
+  const favList = state.favorites.map((episode: IEpisode, n: number) =>
+    <li key={episode.id}><a href={episode.url}>{n+1}. {episode.name}</a></li>
+  );
 
   return (
     <React.Fragment>
       <header className="header">
-        <h1>Rick and Morty</h1>
-        <p>Pick your favorite episode</p>
+        <div>
+          <h1>Rick and Morty</h1>
+          <p>Pick your favorite episode</p>
+        </div>
+        <button className="like-icon">&hearts;
+          <span className="like-icon__count">{state.favorites.length}</span>
+          <ul className="like-icon__list">
+            {favList.length ? favList : "List is empty"}
+          </ul>
+        </button>
       </header>
       <section className="section-episodes">
         {state.episodes.map((episode: IEpisode) => {
