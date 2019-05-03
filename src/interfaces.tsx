@@ -21,3 +21,9 @@ export interface IAction {
    type: string,
    data: any
 }
+
+export interface IEpisodeProps {
+   episodes: Array<IEpisode>,
+   favorites: Array<IEpisode>
+   toggleFav(episode: IEpisode): void,
+ }

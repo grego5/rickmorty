@@ -33,6 +33,8 @@ body {
    line-height: 1.7;
    color: $color-dark;
    font-size: $default-font-size;
+   overflow-y: scroll;
+   padding: 2rem;
 }
 
 ::selection {
