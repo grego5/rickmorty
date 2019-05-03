@@ -9,21 +9,21 @@ const initialState: IState = {
 export const Store = React.createContext<IState | any>(initialState);
 
 
-function reducer(state: IState, action: IAction): IState {
-   switch (action.type) {
+function reducer(state: IState, {type, data}: IAction): IState {
+   switch (type) {
       case 'FETCH_DATA':
-         return {...state, episodes: action.data}
+         return {...state, episodes: data}
       case 'ADD_FAV':
-         return {...state, favorites: [...state.favorites, action.data]}
+         return {...state, favorites: [...state.favorites, data[0]]}
       case 'DEL_FAV':
-         const favorites = state.favorites.filter((ep:IEpisode) => ep.id !== action.data.id)
+         const favorites = state.favorites.filter((ep:IEpisode) => ep.id !== data[0].id)
          return {...state, favorites}
       default:
          return state;
    }
 }
 
-export function StoreProvider(props: any) {
+export function StoreProvider({children}: JSX.ElementChildrenAttribute) {
    const [state, dispatch] = React.useReducer(reducer, initialState);
-   return <Store.Provider value={{state, dispatch}}>{props.children}</Store.Provider>
+   return <Store.Provider value={{state, dispatch}}>{children}</Store.Provider>
 }

@@ -102,6 +102,7 @@
 .favorites {
   display: flex;
   align-items: center;
+  position: relative;
 
   & > p {
     margin-right: 1rem;
@@ -128,7 +129,7 @@
     }
   }
 
-  &__icon:hover > &__list {
+  &__icon:hover + &__list {
     display: block;
   }
 
@@ -152,6 +153,7 @@
   &__list {
     position: absolute;
     left: 50%;
+    top: 4rem;
     transform: translateX(-50%);
     display: none;
     background: cornflowerblue;
@@ -164,6 +166,10 @@
     line-height: initial;
     list-style: none;
     transition: transform 0.2s;
+
+    &:hover {
+      display: block;
+    }
 
     @include respond(tab-port) {
       left: 0;
@@ -202,6 +208,7 @@
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
+    user-select: none;
 
     &:hover,
     &:focus {

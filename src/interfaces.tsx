@@ -19,11 +19,11 @@ export interface IState {
 
 export interface IAction {
    type: string,
-   data: any
+   data: Array<IEpisode>
 }
 
 export interface IEpisodeProps {
    episodes: Array<IEpisode>,
    favorites: Array<IEpisode>
-   toggleFav(episode: IEpisode): void,
+   toggleFav(episode: IEpisode): void
  }
